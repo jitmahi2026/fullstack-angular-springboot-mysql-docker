@@ -1,0 +1,45 @@
+.form-container {
+  width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.btn-cancel {
+  margin-bottom: -50px;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  width: 15%;
+ margin-left: 85%;
+  
+}
+.div-btn-cancel {
+ background-color: red;
+  color: white;
+  border: 1px solid red;
+  width: 15%;
+  cursor: pointer;
+}

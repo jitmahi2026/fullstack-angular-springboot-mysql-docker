@@ -1,0 +1,61 @@
+<div class="form-container">
+    <div class="btn-cancel">
+    <button class="div-btn-cancel" (click)="cancelAdmissionForm()">Cancel</button>
+    </div>
+  <h2>Sourya PG Admission Form</h2>
+  
+  
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+
+    <!-- Name -->
+    <label>Full Name</label>
+    <input type="text" name="name" [(ngModel)]="formData.name" required>
+
+    <!-- Email -->
+    <label>Email</label>
+    <input type="email" name="emailID" [(ngModel)]="formData.emailID" required>
+
+    <!-- Phone -->
+    <label>Mobile Number</label>
+    <input type="text" name="mobileNo" [(ngModel)]="formData.mobileNo" required>
+
+    <!-- Gender -->
+    <label>Gender</label>
+    <select name="gender" [(ngModel)]="formData.gender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+
+    <!-- Room Type -->
+    <label>Room Type</label>
+    <select name="roomType" [(ngModel)]="formData.roomType" required>
+      <option value="">Select</option>
+      <option>Single</option>
+      <option>Double Sharing</option>
+      <option>Triple Sharing</option>
+    </select>
+
+    <!-- Check-in Date -->
+    <label>Check-in Date</label>
+    <input type="date" name="joiningDate" [(ngModel)]="formData.joiningDate" required>
+
+    <!-- Monthly Package -->
+    <label>Monthly Package</label>
+    <input type="number" name="monthlyPkg" [(ngModel)]="formData.monthlyPkg" required>
+    
+    <label>Advance Payment</label>
+    <input type="number" name="advancePayment" [(ngModel)]="formData.advancePayment" required>
+    
+    <label>Room Number</label>
+    <input type="number" name="roomNo" [(ngModel)]="formData.roomNo" required>
+
+    <!-- Address -->
+    <label>Address</label>
+    <textarea name="address" [(ngModel)]="formData.address"></textarea>
+
+    <!-- Submit -->
+    <button class="btn-submit" type="submit" [disabled]="form.invalid">Submit</button>
+
+  </form>
+</div>
