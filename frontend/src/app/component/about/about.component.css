@@ -1,0 +1,51 @@
+.about-page {
+  padding: 20px 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* top button alignment */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* home button */
+.home-btn {
+  display: inline-block;
+  background-color: #f1c40f;
+  color: #222;
+  text-decoration: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: #d4ac0d;
+  transform: translateY(-2px);
+}
+
+/* about content */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.about-container p {
+  font-size: 18px;
+  margin-bottom: 18px;
+  text-align: justify;
+}

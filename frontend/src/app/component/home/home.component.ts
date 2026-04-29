@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  imports: [RouterModule],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
