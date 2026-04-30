@@ -49,6 +49,15 @@
     
     <label>Room Number</label>
     <input type="number" name="roomNo" [(ngModel)]="formData.roomNo" required>
+    
+    <label>Aadhar Card Upload</label>
+      <input
+        type="file"
+        name="aadharCard"
+        accept=".pdf,.jpg,.jpeg,.png"
+        (change)="onFileSelected($event)"
+        required
+    >
 
     <!-- Address -->
     <label>Address</label>
