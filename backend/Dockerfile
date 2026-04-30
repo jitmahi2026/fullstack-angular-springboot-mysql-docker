@@ -2,8 +2,6 @@ FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY target/gangamapg-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 8080
-
-ENTRYPOINT ["java","-Dserver.address=0.0.0.0","-Dserver.port=8080","-jar","app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
