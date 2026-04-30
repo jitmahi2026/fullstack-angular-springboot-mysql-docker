@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +38,7 @@ public class CustomerController {
 	
 	//customer/v1/customerform
 	@PostMapping(path = "/v1/customerform", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Customer> saveCustomerForm(@RequestBody CustomerDTO customerDto, @RequestParam("aadharCard") MultipartFile aadharCard)throws Exception{
+	public ResponseEntity<Customer> saveCustomerForm(@ModelAttribute CustomerDTO customerDto, @RequestParam("aadharCard") MultipartFile aadharCard)throws Exception{
 		 
 		Customer responce = null;
 		
