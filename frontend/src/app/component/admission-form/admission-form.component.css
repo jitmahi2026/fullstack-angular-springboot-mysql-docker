@@ -195,3 +195,23 @@ input[type="file"] {
     grid-column: span 1;
   }
 }
+
+.error {
+  display: block;
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched,
+textarea.ng-valid.ng-touched {
+  border: 1px solid green;
+}
