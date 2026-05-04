@@ -27,9 +27,9 @@ public class Customer implements Serializable{
 	private Long customerID;
 	@Column(name = "name", length=20)
 	private String name;
-	@Column(name = "email_id", length=20)
+	@Column(name = "email_id", length=30)
 	private String emailID;
-	@Column(name = "mobile_no", length=12)
+	@Column(name = "mobile_no", length=15)
 	private String mobileNo;
 	@Column(name = "address", length=30)
 	private String address;
