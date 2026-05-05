@@ -1,4 +1,4 @@
-package com.gangama.pg.securityConfig;
+package com.ganagama.pg.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +14,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://your-actual-frontend-name.onrender.com")
-                        .allowedMethods("*")
-                        .allowedHeaders("*");
+                        .allowedOrigins("https://my-frontend-wsti.onrender.com")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
