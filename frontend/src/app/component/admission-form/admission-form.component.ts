@@ -30,7 +30,7 @@ export class AdmissionFormComponent {
       roomType: ['', Validators.required],
       joiningDate: ['', Validators.required],
       monthlyPkg: ['', Validators.required],
-      advancePayment: ['', Validators.required],
+      advancePayment: [''],
       roomNo: ['', Validators.required],
       address: ['', [Validators.required, Validators.minLength(10)]]
     });
