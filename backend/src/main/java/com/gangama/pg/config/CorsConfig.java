@@ -1,4 +1,4 @@
-package com.gangama.pg.securityConfig;
+package com.gangama.pg.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
