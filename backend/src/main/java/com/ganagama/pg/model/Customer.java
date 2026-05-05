@@ -20,9 +20,9 @@ import lombok.ToString;
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable{
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "customer_id")
 	private Long customerID;
 	@Column(name = "name", length=20)

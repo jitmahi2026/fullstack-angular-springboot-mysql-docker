@@ -27,7 +27,7 @@ import com.ganagama.pg.service.CustomerService;
 
 @RestController
 @RequestMapping("/customer")
-//@CrossOrigin(origins = "http://localhost:4300")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class CustomerController {
 	
 	@Autowired
