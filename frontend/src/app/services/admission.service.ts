@@ -10,7 +10,7 @@ export class AdmissionService {
 
   // private apiUrl = 'http://localhost:8081/customer/v1/customerform';
     // private apiUrl = '/api/customer/v1/customerform';
-      private apiUrl = `${environment.apiUrl}/customer/v1/customerform`;
+      private apiUrl = `${environment.apiUrl}customer/v1/customerform`;
   constructor(private http: HttpClient) { }
 
    saveAdmission(data: any): Observable<any> {
