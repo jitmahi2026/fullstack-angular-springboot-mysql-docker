@@ -5,6 +5,9 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
+# Create uploads directory (IMPORTANT)
+RUN mkdir -p /app/uploads
+
 # Stage 2: Run app
 FROM eclipse-temurin:17-jdk-jammy
 
