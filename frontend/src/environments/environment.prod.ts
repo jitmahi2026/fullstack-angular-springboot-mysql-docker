@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://my-backend.onrender.com'
+  apiUrl: 'https://fullstack-angular-springboot-mysql-docker-production.up.railway.app/'
 };
