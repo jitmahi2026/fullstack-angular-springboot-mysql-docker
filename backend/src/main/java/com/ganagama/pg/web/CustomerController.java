@@ -44,27 +44,40 @@ public class CustomerController {
 
 			if (!aadharCard.isEmpty()) {
 
-			    String displayFileName = aadharCard.getOriginalFilename();
+			    String originalFileName = aadharCard.getOriginalFilename();
 
-			    String displayExtension = "";
+			    String extension = "";
 
-			    if (displayFileName.lastIndexOf(".") != -1
-			            && displayFileName.lastIndexOf(".") != 0) {
+			    int lastDot = originalFileName.lastIndexOf(".");
 
-			        displayExtension =
-			                displayFileName.substring(displayFileName.lastIndexOf(".") + 1);
+			    if (lastDot > 0) {
+			        extension = originalFileName.substring(lastDot);
 			    }
 
-			    displayFileName =
-			            RandomStringUtils.randomAlphanumeric(15) + "." + displayExtension;
+			    String newFileName =
+			            RandomStringUtils.randomAlphanumeric(15) + extension;
 
-			    // SAVE FILE NAME
-			    customerDto.setAddharCard(displayFileName);
+			    customerDto.setAddharCard(newFileName);
 
+			    // CREATE DIRECTORY
+			    File uploadDir = new File("/app/uploads/");
+
+			    if (!uploadDir.exists()) {
+			        uploadDir.mkdirs();
+			    }
+
+			    // DESTINATION FILE
+			    File destination = new File(uploadDir, newFileName);
+
+			    // SAVE FILE USING FILECOPYUTILS
 			    FileCopyUtils.copy(
 			            aadharCard.getBytes(),
-			            new File(appConfig.getImageFilePath(), displayFileName)
+			            destination
 			    );
+
+			    System.out.println("Saved File: " + destination.getAbsolutePath());
+			    System.out.println("Exists: " + destination.exists());
+			    System.out.println("Size: " + destination.length());
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
