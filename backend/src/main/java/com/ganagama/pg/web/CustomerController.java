@@ -44,19 +44,29 @@ public class CustomerController {
 		
 		try {
 
-			if (aadharCard.isEmpty() == false) {
-				String displayFileName = aadharCard.getOriginalFilename();
+			if (!aadharCard.isEmpty()) {
 
-				String displayExtention = "";
+			    String displayFileName = aadharCard.getOriginalFilename();
 
-				if (displayFileName.lastIndexOf(".") != -1 && displayFileName.lastIndexOf(".") != 0)
-					displayExtention = displayFileName.substring(displayFileName.lastIndexOf(".") + 1);
+			    String displayExtension = "";
 
-				displayFileName = RandomStringUtils.randomAlphanumeric(15) + "." + displayExtention;
+			    if (displayFileName.lastIndexOf(".") != -1
+			            && displayFileName.lastIndexOf(".") != 0) {
 
-				customerDto.setAddharCard(displayExtention);
+			        displayExtension =
+			                displayFileName.substring(displayFileName.lastIndexOf(".") + 1);
+			    }
 
-				FileCopyUtils.copy(aadharCard.getBytes(), new File(appConfig.getImageFilePath(), displayFileName));
+			    displayFileName =
+			            RandomStringUtils.randomAlphanumeric(15) + "." + displayExtension;
+
+			    // SAVE FILE NAME
+			    customerDto.setAddharCard(displayFileName);
+
+			    FileCopyUtils.copy(
+			            aadharCard.getBytes(),
+			            new File(appConfig.getImageFilePath(), displayFileName)
+			    );
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
