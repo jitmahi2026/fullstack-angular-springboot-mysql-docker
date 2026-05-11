@@ -1,20 +1,18 @@
 package com.ganagama.pg.web;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -77,6 +75,25 @@ public class CustomerController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(responce);
 		
 	}
+	
+	  @GetMapping("/debug-files")
+	    public List<String> debugFiles() {
+
+	        File folder = new File("/app/uploads/");
+
+	        File[] files = folder.listFiles();
+
+	        List<String> names = new ArrayList<>();
+
+	        if (files != null) {
+
+	            for (File file : files) {
+	                names.add(file.getName());
+	            }
+	        }
+
+	        return names;
+	    }
 	
 	@GetMapping(path = "/v1/allcustomer", produces = "application/json")
 	public ResponseEntity<List<Customer>> getAllCustomers() {
